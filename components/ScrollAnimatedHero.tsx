@@ -64,16 +64,35 @@ export default function ScrollAnimatedHero({ images }: ScrollAnimatedHeroProps) 
                 const ctx = canvasRef.current.getContext('2d');
                 if (!ctx) return;
 
-                // Use logical dimensions for calculations as context is scaled
-                const scale = Math.max(
-                    window.innerWidth / img.width,
-                    window.innerHeight / img.height
-                );
+                // Check orientation
+                const isMobile = window.innerWidth < 768; // Standard mobile breakpoint
+                const canvasAspect = window.innerWidth / window.innerHeight;
+                const imgAspect = img.width / img.height;
+
+                let scale;
+                // Responsive Scaling Logic
+                if (isMobile) {
+                    // Mobile: Contain width to ensure cups are visible
+                    // But ensure it doesn't get too small vertically
+                    scale = Math.max(
+                        window.innerWidth / img.width,
+                        (window.innerHeight * 0.7) / img.height // Min height 70% screen
+                    );
+                } else {
+                    // Desktop: Cover fit (fill screen)
+                    scale = Math.max(
+                        window.innerWidth / img.width,
+                        window.innerHeight / img.height
+                    );
+                }
 
                 const x = (window.innerWidth - img.width * scale) / 2;
                 const y = (window.innerHeight - img.height * scale) / 2;
 
-                ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+                // Fill background with coffee color to blend edges if needed
+                ctx.fillStyle = '#1A0F0A'; // Matches site background
+                ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+
                 ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
             }
         };
