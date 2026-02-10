@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Premium Coffee Website ☕
 
-## Getting Started
+A visually stunning, high-performance coffee brand website built with **Next.js 14**, **Tailwind CSS**, and **Framer Motion**.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Scroll-Triggered Animations:** Immersive storytelling with frame-by-frame canvas animations.
+- **Anti-Gravity Effects:** Floating coffee beans and smooth parallax scrolling.
+- **High-DPI Support:** Crisp rendering on Retina/4K displays.
+- **Static Export:** Blazing fast load times and easy deployment (Netlify/Vercel compatible).
+- **Responsive Design:** Optimized for mobile, tablet, and desktop.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework:** Next.js 14 (App Router)
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion & HTML5 Canvas
+- **Language:** TypeScript
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Handling Assets
 
-## Learn More
+Place your high-resolution frame sequence (JPEG/WEBP) in `public/frames/` named `frame_0.jpg` to `frame_191.jpg`. The canvas component automatically handles loading and responsive scaling.
 
-To learn more about Next.js, take a look at the following resources:
+## 💻 Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🌍 Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is configured for **Static Export**.
+
+1. **Build the project:**
+   ```bash
+   npm run build
+   ```
+   This generates an `out` folder containing your static site.
+
+2. **Deploy:**
+   - **Netlify:** Drag & drop the `out` folder to [app.netlify.com/drop](https://app.netlify.com/drop).
+   - **Vercel:** Connect your GitHub repo and deploy (ensure output directory is set to `out`).
+
+---
+
+Made with ❤️ for Coffee Lovers.
